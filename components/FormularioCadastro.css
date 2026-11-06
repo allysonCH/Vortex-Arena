@@ -1,0 +1,159 @@
+/* Cria o cartão branco que contém os campos e o botão do formulário. */
+.cartao-formulario {
+  width: 100%;
+  padding: clamp(28px, 3vw, 40px);
+  border: 1px solid #e1eaed;
+  border-radius: 12px;
+  color: #174457;
+  background: #fff;
+}
+
+/* Estiliza o título dentro do cartão do formulário. */
+.cartao-formulario h3 {
+  margin: 0 0 8px;
+  color: #123f52;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Formata a frase explicativa abaixo do título do formulário. */
+.cartao-formulario > p:first-of-type {
+  margin: 0 0 24px;
+  color: #69818b;
+  font-size: 13px;
+}
+
+/* Empilha os campos do formulário com um espaço uniforme entre eles. */
+.cartao-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Organiza cada rótulo e seu campo de entrada em coluna. */
+.campo {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Destaca os rótulos dos campos com texto pequeno e legível. */
+.campo label {
+  color: #315a69;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Define tamanho, borda, preenchimento e cores de campos e lista de opções. */
+.campo input,
+.campo select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #cfdee3;
+  border-radius: 8px;
+  outline: none;
+  color: #315a69;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+/* Usa uma cor mais suave para o texto de exemplo dentro dos campos. */
+.campo input::placeholder {
+  color: #849ba4;
+}
+
+/* Realça o campo atualmente selecionado pelo usuário. */
+.campo input:focus,
+.campo select:focus {
+  border-color: #ff8863;
+  box-shadow: 0 0 0 3px rgba(255, 136, 99, 0.15);
+}
+
+/* Coloca e-mail e WhatsApp lado a lado em duas colunas. */
+.campos-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Alinha a caixa de consentimento e seu texto explicativo. */
+.campo-aceite {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+/* Ajusta tamanho e alinhamento da caixa de seleção de consentimento. */
+.campo-aceite input {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  margin: 1px 0 0;
+  accent-color: #ff8863;
+}
+
+/* Estiliza o texto ao lado da caixa de consentimento. */
+.campo-aceite label {
+  color: #69818b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Faz o botão de envio ocupar a largura do cartão com formato arredondado. */
+.cartao-formulario form .botao {
+  width: 100%;
+  min-height: 54px;
+  border: 0;
+  border-radius: 999px;
+  color: #123f52;
+  background: #ff8863;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Clareia o botão quando o cursor passa sobre ele. */
+.cartao-formulario form .botao:hover {
+  background: #ff9979;
+}
+
+/* Exibe o aviso de privacidade abaixo do botão. */
+.cartao-formulario .aviso {
+  margin: 18px 0 0;
+  color: #69818b;
+  font-size: 11px;
+}
+
+/* Define o espaço e o tamanho das mensagens de validação do formulário. */
+.mensagem {
+  margin: 14px 0 0;
+  font-size: 13px;
+}
+
+/* Mostra mensagens de envio bem-sucedido em verde. */
+.mensagem.sucesso {
+  color: #22734b;
+}
+
+/* Mostra mensagens de erro em vermelho. */
+.mensagem.erro {
+  color: #b42318;
+}
+
+/* Faz os campos de e-mail e WhatsApp ficarem empilhados no celular. */
+@media (max-width: 520px) {
+  /* Reduz o preenchimento do cartão em telas estreitas. */
+  .cartao-formulario {
+    padding: 24px 20px;
+  }
+
+  /* Altera os campos lado a lado para uma única coluna. */
+  .campos-linha {
+    grid-template-columns: 1fr;
+  }
+}

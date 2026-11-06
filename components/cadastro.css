@@ -1,0 +1,95 @@
+/* Organiza o texto e o formulário em colunas sobre um fundo azul-escuro. */
+.cadastro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(48px, 8vw, 128px);
+  padding: clamp(80px, 9vw, 144px) 7%;
+  color: #fff;
+  background: #103f52;
+}
+
+/* Limita a largura do texto introdutório do cadastro. */
+.cadastro-texto {
+  max-width: 520px;
+}
+
+/* Formata o pequeno rótulo "Venha fazer parte". */
+.cadastro .etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 34px;
+  color: #d3e2e8;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Desenha o traço coral antes do rótulo da seção. */
+.cadastro .etiqueta::before {
+  width: 24px;
+  height: 2px;
+  background: #ff8863;
+  content: "";
+}
+
+/* Destaca o título do cadastro com letras grandes e brancas. */
+.cadastro-texto h2 {
+  max-width: 440px;
+  margin: 0 0 32px;
+  color: #fff;
+  font-size: clamp(42px, 4vw, 56px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1.4px;
+}
+
+/* Define a cor e a legibilidade dos textos de apoio do cadastro. */
+.cadastro-texto > p:not(.etiqueta) {
+  color: #c1d3da;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Afasta a frase final do texto principal e prepara o espaço para o ornamento. */
+.cadastro-texto .lema {
+  position: relative;
+  margin-top: 112px;
+  font-size: 13px !important;
+}
+
+/* Desenha linhas onduladas decorativas acima da frase final. */
+.cadastro-texto .lema::before {
+  position: absolute;
+  bottom: calc(100% + 24px);
+  left: 0;
+  color: #ff8863;
+  font-size: 46px;
+  line-height: 1;
+  content: "≈";
+}
+
+/* Empilha o texto e o formulário quando a tela tem até 800px. */
+@media (max-width: 800px) {
+  /* Troca as colunas por uma coluna e reduz o espaço interno. */
+  .cadastro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 72px 24px;
+  }
+
+  /* Reduz o espaço acima da frase final em telas menores. */
+  .cadastro-texto .lema {
+    margin-top: 72px;
+  }
+}
+
+/* Ajusta o título da seção em telas estreitas. */
+@media (max-width: 520px) {
+  /* Define um tamanho de título confortável para celular. */
+  .cadastro-texto h2 {
+    font-size: 42px;
+  }
+
+}

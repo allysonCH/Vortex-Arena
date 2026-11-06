@@ -1,0 +1,98 @@
+/* Cria o contexto de posicionamento para o cabeçalho ficar sobre a imagem do Hero. */
+.inicio {
+  position: relative;
+}
+
+/* Coloca o cabeçalho sobre o Hero, alinhando a marca à esquerda e os links à direita. */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+  padding: 20px 6%;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: transparent;
+}
+
+/* Organiza os links do menu em uma linha e controla o espaço entre eles. */
+.cabecalho nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 48px);
+}
+
+/* Deixa brancos os links e os textos da marca que aparecem sobre a foto. */
+.cabecalho nav a,
+.cabecalho .logo-nome,
+.cabecalho .logo-sub {
+  color: #fff;
+}
+
+/* Remove o sublinhado padrão dos links do menu. */
+.cabecalho nav a {
+  text-decoration: none;
+}
+
+/* Dá ao link de cadastro aparência de botão contornado e arredondado. */
+.cabecalho nav .botao-contorno {
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+}
+
+/* Reduz altura, margens, texto e espaçamento do cabeçalho em telas pequenas. */
+@media (max-width: 600px) {
+  /* Encurta o cabeçalho e aproxima seu conteúdo das bordas do celular. */
+  .cabecalho {
+    min-height: 80px;
+    padding: 16px 24px;
+  }
+
+  /* Diminui o espaço entre os links do menu. */
+  .cabecalho nav {
+    gap: 12px;
+  }
+
+  /* Reduz o tamanho do texto dos links. */
+  .cabecalho nav a {
+    font-size: 13px;
+  }
+
+  /* Compacta o botão de cadastro no menu. */
+  .cabecalho nav .botao-contorno {
+    padding: 8px 12px;
+  }
+}
+
+/* Em celulares estreitos, coloca o menu numa linha própria abaixo da marca. */
+@media (max-width: 480px) {
+  /* Permite que os itens do cabeçalho quebrem para mais de uma linha. */
+  .cabecalho {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  /* Faz o menu ocupar toda a largura e distribui os links igualmente. */
+  .cabecalho nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  /* Diminui ainda mais o texto do menu para evitar que ele transborde. */
+  .cabecalho nav a {
+    font-size: 12px;
+  }
+
+  /* Ajusta o preenchimento do botão para caber em telas estreitas. */
+  .cabecalho nav .botao-contorno {
+    padding: 7px 10px;
+  }
+}

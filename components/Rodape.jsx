@@ -1,4 +1,5 @@
 import Logo from './Logo'
+import './rodape.css'
 
 function Rodape() {
   return (
@@ -14,6 +15,9 @@ function Rodape() {
           <a href="#sobre">Sobre</a>
           <a href="#modalidades">Modalidades</a>
           <a href="#cadastro">Cadastro</a>
+          <a className="rodape-voltar-topo" href="#inicio" aria-label="Voltar ao início">
+            ↑
+          </a>
         </nav>
       </div>
 

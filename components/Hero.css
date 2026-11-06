@@ -1,0 +1,169 @@
+/* Define a área principal do Hero e serve de referência para os elementos sobrepostos. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 780px;
+  padding: 160px 6% 80px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
+
+/* Estica a foto para cobrir o Hero e aplica um desfoque leve. */
+.hero-imagem {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  transform: scale(1.03);
+}
+
+/* Acrescenta uma camada escura em degradê para melhorar o contraste do texto. */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 40, 50, 0.35),
+    rgba(10, 40, 50, 0.7)
+  );
+}
+
+/* Limita a largura do conteúdo do Hero sem deixar que ultrapasse o contêiner. */
+.hero-conteudo {
+  width: 100%;
+  max-width: 1050px;
+}
+
+/* Mantém o texto principal e a lista de modalidades brancos sobre a foto. */
+.hero-conteudo h1,
+.hero-conteudo p,
+.hero-modalidades {
+  color: white;
+}
+
+/* Aumenta o título e controla o espaço entre suas linhas. */
+.hero-conteudo h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.1;
+}
+
+/* Limita a largura do parágrafo e separa-o do título. */
+.hero-conteudo > p {
+  max-width: 520px;
+  margin-top: 24px;
+}
+
+/* Estiliza o link de chamada como botão coral arredondado com texto e seta. */
+.hero-conteudo .botao {
+  position: relative;
+  display: flex;
+  width: min(100%, 210px);
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 10px 38px 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  color: #123f52;
+  background: #ff8863;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+/* Desenha a seta decorativa no lado direito do botão. */
+.hero-conteudo .botao::after {
+  position: absolute;
+  right: 13%;
+  font-size: 18px;
+  line-height: 1;
+  content: "↗";
+}
+
+/* Clareia o botão e o move levemente para cima quando o mouse passa sobre ele. */
+.hero-conteudo .botao:hover {
+  background: #ff9979;
+  transform: translateY(-2px);
+}
+
+/* Mostra um contorno quando o botão recebe foco pelo teclado. */
+.hero-conteudo .botao:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Posiciona a lista de modalidades junto à parte inferior do Hero. */
+.hero-modalidades {
+  position: absolute;
+  left: 6%;
+  bottom: 28px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Adapta altura, tipografia e botão do Hero para telas de até 600px. */
+@media (max-width: 600px) {
+  /* Diminui a altura mínima e ajusta o espaço interno do Hero no celular. */
+  .hero {
+    min-height: 600px;
+    padding: 120px 24px 60px;
+  }
+
+  /* Ajusta o título ao tamanho da tela, mantendo limites mínimo e máximo. */
+  .hero-conteudo h1 {
+    font-size: clamp(34px, 9vw, 42px);
+  }
+
+  /* Reduz o texto de apoio em telas menores. */
+  .hero-conteudo > p {
+    font-size: 15px;
+  }
+
+  /* Compacta o botão do Hero para caber no celular. */
+  .hero-conteudo .botao {
+    width: min(100%, 180px);
+    min-height: 40px;
+    margin-top: 16px;
+    padding-inline: 16px 38px;
+    font-size: 13px;
+  }
+
+  /* Reduz a seta do botão no celular. */
+  .hero-conteudo .botao::after {
+    font-size: 17px;
+  }
+
+  /* Mantém a lista de modalidades afastada das bordas inferiores do celular. */
+  .hero-modalidades {
+    left: 24px;
+    bottom: 20px;
+    right: 24px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+}
+
+/* Reserva mais espaço para o cabeçalho nos celulares mais estreitos. */
+@media (max-width: 480px) {
+  /* Afasta o conteúdo do Hero do cabeçalho de duas linhas. */
+  .hero {
+    padding-top: 160px;
+  }
+
+  /* Ajusta o título para telas de largura muito pequena. */
+  .hero-conteudo h1 {
+    font-size: clamp(32px, 9vw, 40px);
+  }
+}

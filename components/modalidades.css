@@ -1,0 +1,150 @@
+/* Define o espaçamento e o fundo da área que apresenta as modalidades. */
+.modalidades {
+  padding: clamp(72px, 8vw, 128px) 6%;
+  color: #174457;
+  background: #edf5f6;
+  border-top: 1px solid #d5e1e4;
+}
+
+/* Alinha o título à esquerda e o texto de apoio à direita. */
+.modalidades-topo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 42px;
+}
+
+/* Formata o rótulo "Modalidades" acima do título. */
+.modalidades .etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  color: #315a69;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Define o tamanho, a cor e o peso do título da seção. */
+.modalidades-topo h2 {
+  margin: 0;
+  color: #123f52;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+/* Limita e estiliza o texto de apoio ao lado do título. */
+.modalidades-topo > p {
+  max-width: 360px;
+  margin: 0 0 4px;
+  color: #69818b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Distribui os cartões de modalidade em três colunas flexíveis. */
+.lista-modalidades {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Cria o cartão branco e esconde qualquer conteúdo que ultrapasse seus cantos. */
+.card-modalidade {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* Faz a imagem preencher o topo do cartão sem distorção. */
+.card-modalidade > img {
+  display: block;
+  width: 100%;
+  height: clamp(210px, 19vw, 290px);
+  object-fit: cover;
+}
+
+/* Define o espaçamento e a aparência do nome de cada modalidade. */
+.card-modalidade > h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 28px 28px 0;
+  color: #123f52;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+/* Estiliza a descrição que aparece dentro de cada cartão. */
+.card-modalidade > p {
+  min-height: 74px;
+  margin: 18px 28px 16px;
+  color: #69818b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Formata o link de ação na base de cada cartão. */
+.card-modalidade > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 28px;
+  padding: 14px 0 24px;
+  border-top: 1px solid #d5e1e4;
+  color: #315a69;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Muda a cor do link quando o cursor passa sobre ele. */
+.card-modalidade > a:hover {
+  color: #ff8863;
+}
+
+/* Mostra dois cartões por linha em telas médias. */
+@media (max-width: 900px) {
+  /* Divide os cartões em duas colunas. */
+  .lista-modalidades {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Empilha o conteúdo e os cartões em telas pequenas. */
+@media (max-width: 620px) {
+  /* Reduz o espaçamento lateral da seção no celular. */
+  .modalidades {
+    padding: 64px 24px;
+  }
+
+  /* Coloca título e texto de apoio um abaixo do outro. */
+  .modalidades-topo {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  /* Exibe um cartão por linha no celular. */
+  .lista-modalidades {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Ajusta a altura das imagens dos cartões no celular. */
+  .card-modalidade > img {
+    height: 240px;
+  }
+
+  /* Deixa a altura do cartão acompanhar a descrição em telas pequenas. */
+  .card-modalidade > p {
+    min-height: 0;
+  }
+}

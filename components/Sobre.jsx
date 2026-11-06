@@ -1,3 +1,5 @@
+import './Sobre.css'
+
 function Sobre({ imagem, destaques }) {
   return (
     <section id="sobre" className="sobre">

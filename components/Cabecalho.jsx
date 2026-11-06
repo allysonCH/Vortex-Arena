@@ -1,4 +1,5 @@
 import Logo from './Logo'
+import './Cabecalho.css'
 
 function Cabecalho() {
   return (

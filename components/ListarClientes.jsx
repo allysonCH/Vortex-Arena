@@ -1,15 +1,26 @@
+import './listarCliente.css'
+
 function ListaClientes({ clientes }) {
   return (
     <section className="clientes">
-      <h2>Clientes cadastrados: {clientes.length}</h2>
+      <h2 className="clientes-titulo">
+        Clientes cadastrados
+        <span className="clientes-contagem">{clientes.length}</span>
+      </h2>
 
       {clientes.length === 0 ? (
-        <p>Nenhum cliente cadastrado ainda.</p>
+        <p className="clientes-vazio">Nenhum cliente cadastrado ainda.</p>
       ) : (
         <ul>
           {clientes.map(cliente => (
             <li key={cliente.id}>
-              {cliente.nome} - {cliente.modalidade}
+              <span className="cliente-inicial" aria-hidden="true">
+                {cliente.nome.trim().charAt(0).toUpperCase()}
+              </span>
+              <span className="cliente-detalhes">
+                <span className="cliente-nome">{cliente.nome}</span>
+                <span className="cliente-modalidade">{cliente.modalidade}</span>
+              </span>
             </li>
           ))}
         </ul>

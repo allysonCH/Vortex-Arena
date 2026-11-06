@@ -45,8 +45,10 @@ function App() {
 
   return (
     <>
-      <Cabecalho />
-      <Hero imagem={imagemHero} modalidades={modalidades} />
+      <div className="inicio">
+        <Cabecalho />
+        <Hero imagem={imagemHero} modalidades={modalidades} />
+      </div>
       <Sobre imagem={imagemSobre} destaques={destaques} />
       <Modalidades modalidades={modalidades} />
       <Cadastro modalidades={modalidades} aoCadastrar={cadastrarCliente} />

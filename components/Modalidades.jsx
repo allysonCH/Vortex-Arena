@@ -1,3 +1,5 @@
+import './modalidades.css'
+
 function Modalidades({ modalidades }) {
   return (
     <section id="modalidades" className="modalidades">

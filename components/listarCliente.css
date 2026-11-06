@@ -1,0 +1,157 @@
+/* Define o fundo e o espaço interno da lista de clientes. */
+.clientes {
+  padding: clamp(40px, 6vw, 72px) 5.2%;
+  border-radius: 24px 24px 0 0;
+  border-bottom: 1px solid #d5e1e4;
+  color: #294858;
+  background: #edf4f6;
+}
+
+/* Alinha o título da lista e o contador de clientes. */
+.clientes-titulo {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0 0 38px;
+  color: #294858;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Mostra a quantidade de clientes em uma cápsula coral. */
+.clientes-contagem {
+  display: inline-flex;
+  min-width: 56px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: #fff;
+  background: #f4896b;
+  font-family: inherit;
+  font-size: 25px;
+}
+
+/* Organiza os cartões de cliente em colunas que se ajustam à largura disponível. */
+.clientes ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cria o cartão branco com inicial e dados do cliente alinhados lado a lado. */
+.clientes li {
+  display: flex;
+  min-width: 0;
+  min-height: 144px;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 32px;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0 16px 36px rgba(27, 64, 79, 0.08);
+}
+
+/* Exibe a primeira letra do nome dentro de um círculo coral. */
+.cliente-inicial {
+  display: flex;
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #f4896b;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 38px;
+}
+
+/* Empilha o nome e a modalidade, alinhando-os à esquerda. */
+.cliente-detalhes {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Estiliza o nome e corta o excesso quando ele não cabe no cartão. */
+.cliente-nome {
+  overflow: hidden;
+  max-width: 100%;
+  color: #294858;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Destaca a modalidade em uma cápsula coral-clara. */
+.cliente-modalidade {
+  padding: 7px 20px;
+  border-radius: 999px;
+  color: #c85c3d;
+  background: #ffe6dd;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+}
+
+/* Formata a mensagem exibida quando ainda não há clientes. */
+.clientes-vazio {
+  margin: 0;
+  padding: 24px;
+  border-radius: 16px;
+  color: #69818b;
+  background: #fff;
+}
+
+/* Reduz os espaços e elementos dos cartões em telas estreitas. */
+@media (max-width: 560px) {
+  /* Ajusta o preenchimento da seção para telas pequenas. */
+  .clientes {
+    padding: 40px 24px;
+  }
+
+  /* Aproxima o título e o contador e reduz o espaço abaixo deles. */
+  .clientes-titulo {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  /* Reduz o tamanho da cápsula com a quantidade de clientes. */
+  .clientes-contagem {
+    min-width: 42px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  /* Compacta os cartões em telas pequenas. */
+  .clientes li {
+    min-height: 120px;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  /* Reduz o círculo com a inicial do cliente. */
+  .cliente-inicial {
+    width: 68px;
+    height: 68px;
+    flex-basis: 68px;
+    font-size: 30px;
+  }
+
+  /* Reduz a cápsula da modalidade para caber em celulares. */
+  .cliente-modalidade {
+    padding: 6px 14px;
+    font-size: 15px;
+  }
+}

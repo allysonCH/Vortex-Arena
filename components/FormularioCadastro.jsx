@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Mensagem from './Mensagem'
+import './FormularioCadastro.css'
 
 function FormularioCadastro({ modalidades, aoCadastrar }) {
   const [nome, setNome] = useState('')

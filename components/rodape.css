@@ -1,0 +1,127 @@
+/* Define o fundo, a cor do texto e os espaços gerais do rodapé. */
+.rodape {
+  padding: 72px 6% 32px;
+  color: #174457;
+  background: #edf5f6;
+}
+
+/* Organiza marca, frase e navegação em colunas alinhadas verticalmente. */
+.rodape-topo {
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) auto;
+  align-items: center;
+  gap: clamp(32px, 4vw, 64px);
+  padding: 0 0 58px;
+}
+
+/* Formata o contêiner da marca no rodapé. */
+.rodape .Logo {
+  color: #123f52;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Destaca o nome principal da marca no rodapé. */
+.rodape .logo-nome {
+  color: #123f52;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Estiliza o subtítulo da marca abaixo do nome. */
+.rodape .logo-sub {
+  margin-top: 4px;
+  color: #315a69;
+  font-size: 10px;
+}
+
+/* Define tamanho, peso e espaçamento da frase institucional. */
+.rodape-frase {
+  color: #123f52;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Alinha horizontalmente os links de navegação do rodapé. */
+.rodape-topo nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 42px);
+}
+
+/* Define cor e aparência dos links do rodapé. */
+.rodape-topo nav a {
+  color: #174457;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Muda a cor dos links quando o cursor passa sobre eles. */
+.rodape-topo nav a:hover {
+  color: #ff8863;
+}
+
+/* Destaca e dimensiona a seta que leva de volta ao topo da página. */
+.rodape-topo nav .rodape-voltar-topo {
+  color: #ff8863;
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* Separa a faixa de copyright e alinha seus textos nas extremidades. */
+.rodape-base {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 28px;
+  border-top: 1px solid #d5e1e4;
+  color: #69818b;
+  font-size: 11px;
+}
+
+/* Reorganiza o rodapé em telas de até 760px de largura. */
+@media (max-width: 760px) {
+  /* Reduz o preenchimento do rodapé em telas menores. */
+  .rodape {
+    padding: 48px 24px 24px;
+  }
+
+  /* Redistribui marca e frase em duas colunas. */
+  .rodape-topo {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    padding-bottom: 36px;
+  }
+
+  /* Move os links para uma linha própria e permite que quebrem de linha. */
+  .rodape-topo nav {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    gap: 18px 24px;
+  }
+
+  /* Reduz um pouco o tamanho dos links em telas menores. */
+  .rodape-topo nav a {
+    font-size: 13px;
+  }
+
+  /* Empilha as informações inferiores para facilitar a leitura no celular. */
+  .rodape-base {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Coloca todos os elementos do topo em uma coluna em telas muito estreitas. */
+@media (max-width: 420px) {
+  /* Faz marca e frase ocuparem linhas separadas. */
+  .rodape-topo {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mantém a navegação no fluxo da única coluna. */
+  .rodape-topo nav {
+    grid-column: auto;
+  }
+}

@@ -1,3 +1,4 @@
+import './cadastro.css'
 import FormularioCadastro from './FormularioCadastro'
 
 function Cadastro({ modalidades, aoCadastrar }) {

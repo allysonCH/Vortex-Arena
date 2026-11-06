@@ -1,3 +1,4 @@
+import './Hero.css'
 function Hero({ imagem, modalidades }) {
   const nomes = modalidades.map(modalidade => modalidade.nome).join(' / ')
 
@@ -10,7 +11,6 @@ function Hero({ imagem, modalidades }) {
       />
 
       <div className="hero-conteudo">
-        <p className="hero-etiqueta">Areia. Esporte. Conexão.</p>
         <h1>
           A intensidade das quadras.
           <br />
